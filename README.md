@@ -1,6 +1,7 @@
 # REQT
-## A fullstack webapp created using React, Express, GraphQL, and Typescript
+This repo is a working example of a React App that queries a GraphQL API using an Apollo Client. Both the frontend and backend are written in TypeScript.
 
+## Setup
 Setting up a react and express frontend/backend server using typescript with apollo graphql typescript type compiling support
 
 How to do this: 
