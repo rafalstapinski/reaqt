@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "module": "esnext",
+    "importHelpers": true,
+    "outDir": "../../dist/client",
+    "lib": ["es2015", "dom", "esnext.asynciterable"],
+    "jsx": "react"
+  },
+  "files": ["./index.tsx"]
+}
