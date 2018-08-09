@@ -11,7 +11,7 @@ Do GQL typing with apollo
 
 Create frontend react app which queries backend using apollo
 
-With help from these tutorials:
+## With help from these tutorials:
 
 [Creating an express app with Typescript](https://github.com/BrianDGLS/express-ts)
 
