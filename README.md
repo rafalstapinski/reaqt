@@ -1,49 +1,42 @@
-# REQT
-This repo is a working example of a React App that queries a GraphQL API using an Apollo Client. Both the frontend and backend are written in TypeScript.
+# reaqt
+
+<center>
+<img src="https://www.shareicon.net/download/2016/07/08/117367_logo.ico" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/200px-GraphQL_Logo.svg.png" width="100" height="100">
+<img src="https://seeklogo.com/images/A/apollo-logo-DC7DD3C444-seeklogo.com.png" width="100" height="100">
+<h3>A React Express Apollo graphQL Typescript boilerplate</h3>
+</center>
+
+This repo is a working boilerplate of a React app that queries a GraphQL API using the Apollo Client. Both the client and the server are written in TypeScript with individual tsconfig.json files. This boilerplate is based off of the [fullstack-typescript](https://github.com/gilamran/fullstack-typescript) repo.
+
+## Features
+
+Auto compiled GraphQL types from client graphql query files and server schema with `npm run gql`. GraphQL types are stored in app/typings/gql.d.ts and are globally accessible in the GQL namespace. These are useful for keeping a single source of truth for client and server interactions with GraphQL. For example, if we have the query getStudentById we can keep a single source of truth in `GQL.GetStudentByIdOnQueryArguments`, `GQL.SelectionOnGetStudentById` and `GQL.Student`
 
 ## Setup
-Setting up a react and express frontend/backend server using typescript with apollo graphql typescript type compiling support
 
-How to do this: 
+To run the development server
 
-Create backend graphql api with node and express
-
-```javascript
-/* app/server.ts */
-import * as express from 'express';
-var express_graphql = require('express-graphql');
-import { schema } from './graphql';
-import {routes} from './routes';
-
-const app: express.Application = express();
-const port: number = 3001 || process.env.PORT;
-
-app.use('/graphql', express_graphql({
-    schema: schema,
-    graphiql: true
-}));
-
-app.use('/', routes);
-
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/`);
-});
+```sh
+npm install
+npm run dev
 ```
 
-Do GQL typing with apollo
+## Directory Structure
 
-Create frontend react app which queries backend using apollo
-
-## With help from these tutorials:
-
-[Creating an express app with Typescript](https://github.com/BrianDGLS/express-ts)
-
-
-[Adding graphQL to an express app](https://medium.com/codingthesmartway-com-blog/creating-a-graphql-server-with-node-js-and-express-f6dddc5320e1)
-
-
-[Autogenerating types with apollo](https://github.com/apollographql/apollo-cli)
-
-
-[Create-React-App with Typescript](https://github.com/wmonk/create-react-app-typescript)
-
+```
+.
++--app
+| +--client
+|   +--components
+|   +--pages
+|   +--queries
+| +--server
+|   +--models
+|   +--queries
+|   +--routes
++--dist
++--node_modules
++--scripts
+| +--generate-gql
+```

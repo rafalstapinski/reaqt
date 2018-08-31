@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "sourceMap": true,
+    "module": "commonjs",
+    "importHelpers": true,
+    "allowJs": true,
+    "outDir": "../../dist/server",
+    "lib": ["es6", "esnext.asynciterable"],
+    "moduleResolution": "node",
+    "types": ["node"],
+    "rootDir": "."
+  },
+  "files": ["./server.ts"],
+  "include": ["../typings/gql.d.ts"]
+}
