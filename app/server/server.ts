@@ -1,11 +1,9 @@
 import { StaticsDevRouter } from './routes/statics-dev-router'
 import { StaticsRouter } from './routes/statics-router'
-import * as config from './config'
 import * as express from 'express'
 import * as express_graphql from 'express-graphql'
 import Schema from './schema'
-
-console.log(config.SERVER_PORT)
+import * as config from './config'
 const app: express.Application = express()
 
 app.use(
