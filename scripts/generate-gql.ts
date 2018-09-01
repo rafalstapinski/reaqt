@@ -10,17 +10,16 @@ const clientPath = path.join(__dirname, '../app/client')
 
 const walkSync = (dir, filelist) => {
   if (dir[dir.length - 1] != '/') dir = dir.concat('/')
-
-  var fs = fs || require('fs'),
-    files = fs.readdirSync(dir)
+  const files = fs.readdirSync(dir)
   filelist = filelist || []
-  files.forEach(function(file) {
+
+  for (const file of files) {
     if (fs.statSync(dir + file).isDirectory()) {
       filelist = walkSync(dir + file + '/', filelist)
     } else {
       filelist.push(dir + file)
     }
-  })
+  }
   return filelist
 }
 
