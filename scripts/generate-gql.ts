@@ -1,12 +1,12 @@
-import Schema from '../../app/server/schema'
+import Schema from '../app/server/schema'
 import * as fs from 'fs'
 import { generateNamespace } from '@gql2ts/from-schema'
 import * as humps from 'humps'
 import * as path from 'path'
 import fromQuery from '@gql2ts/from-query'
 
-const gqlFilePath = '../../app/typings/gql.d.ts'
-const clientPath = path.join(__dirname, '../../app/client')
+const gqlFilePath = '../app/typings/gql.d.ts'
+const clientPath = path.join(__dirname, '../app/client')
 
 const walkSync = (dir, filelist) => {
   if (dir[dir.length - 1] != '/') dir = dir.concat('/')

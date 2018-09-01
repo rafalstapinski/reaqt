@@ -9,8 +9,7 @@
     "outDir": "../../dist/server",
     "lib": ["es6", "esnext.asynciterable"],
     "moduleResolution": "node",
-    "types": ["node"],
-    "rootDir": "."
+    "types": ["node"]
   },
   "files": ["./server.ts"],
   "include": ["../typings/gql.d.ts"]

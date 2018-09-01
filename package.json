@@ -11,7 +11,7 @@
     "dev-server": "tsc-watch -p ./app/server --onSuccess \"node ./dist/server/server.js\"",
     "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run build-server\" \"npm run build-client\"",
-    "gql": "cd ./scripts/generate-gql && tsc generate-gql.ts  --target \"es5\" --lib \"esnext\" --types \"node\" --moduleResolution \"node\" &&  node generate-gql.js ; tslint --fix app/typings/**.d.ts"
+    "gql": "cd scripts && ts-node generate-gql.ts && tslint --fix app/typings/**.d.ts "
   },
   "dependencies": {
     "@material-ui/core": "^1.2.1",
@@ -62,6 +62,7 @@
     "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
+    "ts-node": "^7.0.1",
     "tsc-watch": "^1.0.22",
     "tslint": "^5.11.0",
     "typescript": "^2.9.2",

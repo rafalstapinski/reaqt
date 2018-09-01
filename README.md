@@ -12,9 +12,11 @@ This repo is a working boilerplate of a React app that queries a GraphQL API usi
 
 ## GQL Type Generation
 
-Auto compiled GraphQL types from client graphql query files and server schema with `npm run gql`. GraphQL types are stored in app/typings/gql.d.ts and are globally accessible in the GQL namespace. These are useful for keeping a single source of truth for client and server interactions with GraphQL. For example, if we have the query getStudentById we can keep a single source of truth in `GQL.GetStudentByIdOnQueryArguments`, `GQL.SelectionOnGetStudentById` and `GQL.Student`
+Auto compile GraphQL types from client graphql query files and server schema with `npm run gql`. GraphQL types are stored in `app/typings/gql.d.ts` and are globally accessible in the `GQL` namespace. These are useful for keeping a single source of truth for client and server interactions with GraphQL. For example, if we have the query getStudentById we can keep a single source of truth for query arguments: `GQL.GetStudentByIdOnQueryArguments`, return type:`GQL.SelectionOnGetStudentById`, and model: `GQL.Student`. This is extremely useful when using types in both the client and the server, and you can make sure they match with the GQL types thanks to Typescript.
 
-A schema of server side
+Server schema needs to be updated in `app/server/schema.ts` when any new query files that are created on the server side. Client side queries live inside `queries/**/` folders as .graphql files alongside Apollo Query components.
+
+To modify type generation, update the file `generate-gql.ts` in `scripts/generate-gql`. It picks up the schema from `app/server/schema.ts` and scans the `app/client` directory for any new `.graphql` files.
 
 ## Setup
 

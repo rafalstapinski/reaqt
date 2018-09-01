@@ -19,7 +19,11 @@ export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLID)
         }
       },
-      resolve: (_, { id }): GQL.SelectionOnGetStudentById => {
+      resolve: (_, { id }) => {
+        /**
+         *  do anything here, authenticate, connect to a database/rest api and complies with
+         * the GQL.SelectionOnGetStudentById return type
+         */
         if (id === '1') {
           return { id: '1', name: 'pat' }
         } else if (id === '2') {
@@ -36,7 +40,11 @@ export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLString)
         }
       },
-      resolve: (_, { name }): GQL.SelectionOnGetStudentById => {
+      resolve: (_, { name }) => {
+        /**
+         *  do anything here, authenticate, connect to a database/rest api and complies with
+         * the GQL.SelectionOnGetStudentByName return type
+         */
         if (name === 'pat') {
           return { id: '1', name: 'pat' }
         } else if (name === 'raf') {
