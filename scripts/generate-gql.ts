@@ -1,4 +1,4 @@
-import Schema from '../app/server/schema'
+import { Schema } from '../app/server/schema'
 import * as fs from 'fs'
 import { generateNamespace } from '@gql2ts/from-schema'
 import * as humps from 'humps'

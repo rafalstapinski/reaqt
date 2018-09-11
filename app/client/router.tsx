@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import NotFound from './pages/not-found'
-import Students from './pages/students'
+import { NotFound } from './pages/not-found/not-found'
+import { Students } from './pages/students/students'
 
 export const Router: React.SFC<{}> = () => {
   return (
@@ -16,5 +16,3 @@ export const Router: React.SFC<{}> = () => {
     </BrowserRouter>
   )
 }
-
-export default Router

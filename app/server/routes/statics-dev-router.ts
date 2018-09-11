@@ -23,5 +23,3 @@ export const StaticsDevRouter = () => {
 
   return router
 }
-
-export default StaticsDevRouter

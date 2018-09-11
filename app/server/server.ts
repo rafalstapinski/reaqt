@@ -2,7 +2,7 @@ import { StaticsDevRouter } from './routes/statics-dev-router'
 import { StaticsRouter } from './routes/statics-router'
 import * as express from 'express'
 import * as express_graphql from 'express-graphql'
-import Schema from './schema'
+import { Schema } from './schema'
 import * as config from './config'
 const app: express.Application = express()
 

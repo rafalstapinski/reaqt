@@ -22,5 +22,3 @@ export const Header: React.StatelessComponent<{}> = () => {
     </div>
   )
 }
-
-export default Header

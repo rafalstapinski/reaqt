@@ -18,5 +18,3 @@ export const StudentType: GraphQLObjectType = new GraphQLObjectType({
     }
   }
 })
-
-export default StudentType

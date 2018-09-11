@@ -1,6 +1,6 @@
 import { GraphQLSchema } from 'graphql'
 import { mergeSchemas } from 'graphql-tools'
-import StudentQueries from './queries/student'
+import { StudentQueries } from './queries/student'
 
 const StudentSchema: GraphQLSchema = new GraphQLSchema({
   query: StudentQueries
@@ -9,5 +9,3 @@ const StudentSchema: GraphQLSchema = new GraphQLSchema({
 export const Schema: GraphQLSchema = mergeSchemas({
   schemas: [StudentSchema]
 })
-
-export default Schema

@@ -2,7 +2,6 @@ import {
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLID,
-  GraphQLList,
   GraphQLString
 } from 'graphql'
 import { StudentType } from '../models/student'
@@ -54,5 +53,3 @@ export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
     }
   }
 })
-
-export default StudentQueries

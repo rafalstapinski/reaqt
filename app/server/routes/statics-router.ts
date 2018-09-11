@@ -16,5 +16,3 @@ export const StaticsRouter = () => {
 
   return router
 }
-
-export default StaticsRouter
