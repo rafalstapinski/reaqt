@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Query } from 'react-apollo'
-const GET_STUDENT_BY_NAME = require('./get-student-by-name.graphql')
+import * as GET_STUDENT_BY_NAME from './get-student-by-name.graphql'
 
 export const GetStudentByName = name => (
   <Query query={GET_STUDENT_BY_NAME} variables={name}>

@@ -9,5 +9,5 @@
     "jsx": "react"
   },
   "files": ["./client.tsx"],
-  "include": ["../typings/gql.d.ts"]
+  "include": ["../typings/gql.d.ts", "../typings/modules.d.ts"]
 }
