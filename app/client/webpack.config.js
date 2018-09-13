@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const version = require("../../package.json").version;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OpenBrowserPlugin = require("open-browser-webpack-plugin");

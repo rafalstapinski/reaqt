@@ -5,6 +5,7 @@ import {
   GraphQLString
 } from 'graphql'
 import { StudentType } from '../models/student'
+import { GQL } from '../../typings/gql'
 
 export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
   name: 'StudentQueries',
@@ -18,10 +19,10 @@ export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLID)
         }
       },
-      resolve: (_, { id }) => {
+      resolve: (_, { id }): GQL.SelectionOnGetStudentById => {
         /**
-         *  do anything here, authenticate, connect to a database/rest api and complies with
-         * the GQL.SelectionOnGetStudentById return type
+         *  do anything here, authenticate, connect to a database/rest api so long as
+         * the return type complies with GQL.SelectionOnGetStudentById
          */
         if (id === '1') {
           return { id: '1', name: 'pat' }
@@ -39,10 +40,10 @@ export const StudentQueries: GraphQLObjectType = new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLString)
         }
       },
-      resolve: (_, { name }) => {
+      resolve: (_, { name }): GQL.SelectionOnGetStudentByName => {
         /**
-         *  do anything here, authenticate, connect to a database/rest api and complies with
-         * the GQL.SelectionOnGetStudentByName return type
+         *  do anything here, authenticate, connect to a database/rest api so long as
+         * the return type complies with GQL.SelectionOnGetStudentByName
          */
         if (name === 'pat') {
           return { id: '1', name: 'pat' }

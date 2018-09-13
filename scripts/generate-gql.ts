@@ -5,8 +5,9 @@ import * as humps from 'humps'
 import * as path from 'path'
 import fromQuery from '@gql2ts/from-query'
 
-const gqlFilePath = '../app/typings/gql.d.ts'
-const clientPath = path.join(__dirname, '../app/client')
+const gqlFilePath = './app/typings/gql.ts'
+const clientQueryPath = path.join(__dirname, '../app/client/queries')
+let output = ''
 
 const walkSync = (dir, filelist) => {
   if (dir[dir.length - 1] != '/') dir = dir.concat('/')
@@ -34,12 +35,9 @@ try {
     generateNamespace: (_, interfaces) => `${interfaces} `
   })
 
-  fs.writeFileSync(
-    gqlFilePath,
-    `// graphql typescript definitions\n\ndeclare namespace GQL {\n${ns}\n`
-  )
+  output += `// graphql typescript definitions\n\nexport namespace GQL {\n${ns}\n`
 
-  const files = walkSync(clientPath, [])
+  const files = walkSync(clientQueryPath, [])
 
   for (const file of files) {
     if (path.extname(file) === '.graphql' || path.extname(file) === '.gql') {
@@ -48,15 +46,16 @@ try {
       const allDefinitions = tsDefinitions
         .map(({ result }) => result)
         .join('\n')
-      fs.appendFileSync(gqlFilePath, allDefinitions)
-      fs.appendFileSync(gqlFilePath, '\n')
+      output += allDefinitions + '\n'
     }
   }
 
-  fs.appendFileSync(gqlFilePath, `}`)
+  output += '}'
 
-  console.log('Successfully created gql.d.ts file')
+  fs.writeFileSync(gqlFilePath, output)
+
+  console.log('Successfully created gql.ts file')
 } catch (err) {
-  console.log('Error creating gql.d.ts file')
+  console.log('Error creating gql.ts file')
   throw err
 }

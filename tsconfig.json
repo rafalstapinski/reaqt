@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true,
+    "module": "commonjs",
+    "importHelpers": true,
+    "allowJs": true,
+    "outDir": "./dist",
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "types": ["node"],
+    "jsx": "react",
+    "moduleResolution": "node"
+  },
+  "files": ["./app/server/server.ts", "./app/client/client.tsx"],
+  "include": ["./app/typings/modules.d.ts"]
+}

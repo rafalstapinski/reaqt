@@ -1,73 +1,73 @@
 // graphql typescript definitions
 
-declare namespace GQL {
+export namespace GQL {
 interface GraphQLResponseRoot {
-  data?: Query;
-  errors?: Array<GraphQLResponseError>;
+  data?: Query
+  errors?: Array<GraphQLResponseError>
 }
 
 interface GraphQLResponseError {
   /** Required for all errors */
-  message: string;
-  locations?: Array<GraphQLResponseErrorLocation>;
+  message: string
+  locations?: Array<GraphQLResponseErrorLocation>
   /** 7.2.2 says 'GraphQL servers may provide additional entries to error' */
-  [propName: string]: any;
+  [propName: string]: any
 }
 
 interface GraphQLResponseErrorLocation {
-  line: number;
-  column: number;
+  line: number
+  column: number
 }
 
 interface Query {
-  __typename: 'Query';
-  getStudentById: Student | null;
-  getStudentByName: Student | null;
+  __typename: 'Query'
+  getStudentById: Student | null
+  getStudentByName: Student | null
 }
 
 interface GetStudentByIdOnQueryArguments {
   /** ID of the student */
-  id: string;
+  id: string
 }
 
 interface GetStudentByNameOnQueryArguments {
   /** Name of the student */
-  name: string;
+  name: string
 }
 
 /** Student object type */
 interface Student {
-  __typename: 'Student';
+  __typename: 'Student'
   /** ID of the student */
-  id: string;
+  id: string
   /** Name of the student */
-  name: string;
+  name: string
 }
 
 export interface GetStudentByIdInput {
-  id: string;
+  id: string
 }
 
 export interface SelectionOnGetStudentById {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 
 export interface GetStudentById {
-  getStudentById: SelectionOnGetStudentById | null;
+  getStudentById: SelectionOnGetStudentById | null
 }
 
 export interface GetStudentByNameInput {
-  name: string;
+  name: string
 }
 
 export interface SelectionOnGetStudentByName {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 
 export interface GetStudentByName {
-  getStudentByName: SelectionOnGetStudentByName | null;
+  getStudentByName: SelectionOnGetStudentByName | null
 }
 
 }
