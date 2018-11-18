@@ -1,0 +1,9 @@
+query getTransactionsAt($barId: Int!) {
+  getTransactionsAt(barId: $barId) {
+    _id
+    total
+    timestamp
+    drinkerId
+    drinkerName
+  }
+}

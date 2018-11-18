@@ -1,0 +1,9 @@
+query getTransactionsOf($drinkerId: Int!) {
+  getTransactionsOf(drinkerId: $drinkerId) {
+    _id
+    total
+    timestamp
+    barId
+    barName
+  }
+}

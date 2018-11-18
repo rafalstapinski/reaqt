@@ -27,6 +27,10 @@ interface Query {
   getBar: Bar | null
   getProducts: Array<Product> | null
   getProduct: Product | null
+  /** Gets transactions at a bar by bar ID */
+  getTransactionsAt: Array<Transaction> | null
+  /** Gets transactions at a drinker by drinker ID */
+  getTransactionsOf: Array<Transaction> | null
 }
 
 interface GetDrinkerOnQueryArguments {
@@ -42,6 +46,16 @@ interface GetBarOnQueryArguments {
 interface GetProductOnQueryArguments {
   /** ID of the product */
   id: number
+}
+
+interface GetTransactionsAtOnQueryArguments {
+  /** ID of the bar */
+  barId?: number | null
+}
+
+interface GetTransactionsOfOnQueryArguments {
+  /** ID of the drinker */
+  drinkerId?: number | null
 }
 
 /** Drinker object type */
@@ -89,6 +103,25 @@ interface Product {
   price: number
   /** Boolean value is beer or not */
   isBeer: boolean
+}
+
+/** Transaction object type */
+interface Transaction {
+  __typename: 'Transaction'
+  /** ID of the transaction */
+  _id: number
+  /** Transaction total */
+  total: number
+  /** Timestamp of the transaction */
+  timestamp: string
+  /** Drinker ID */
+  drinkerId: number
+  /** Bar ID */
+  barId: number
+  /** Drinker name */
+  drinkerName: string
+  /** Bar name */
+  barName: string
 }
 
 export interface GetBarInput {
@@ -175,6 +208,38 @@ export interface SelectionOnGetProducts {
 
 export interface GetProducts {
   getProducts: Array<SelectionOnGetProducts | null> | null
+}
+
+export interface GetTransactionsAtInput {
+  barId: number
+}
+
+export interface SelectionOnGetTransactionsAt {
+  _id: number
+  total: number
+  timestamp: string
+  drinkerId: number
+  drinkerName: string
+}
+
+export interface GetTransactionsAt {
+  getTransactionsAt: Array<SelectionOnGetTransactionsAt | null> | null
+}
+
+export interface GetTransactionsOfInput {
+  drinkerId: number
+}
+
+export interface SelectionOnGetTransactionsOf {
+  _id: number
+  total: number
+  timestamp: string
+  barId: number
+  barName: string
+}
+
+export interface GetTransactionsOf {
+  getTransactionsOf: Array<SelectionOnGetTransactionsOf | null> | null
 }
 
 }
