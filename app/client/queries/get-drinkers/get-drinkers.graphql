@@ -1,0 +1,6 @@
+query getDrinkers {
+  getDrinkers {
+    _id
+    name
+  }
+}

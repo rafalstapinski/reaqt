@@ -41,6 +41,8 @@ try {
 
   for (const file of files) {
     if (path.extname(file) === '.graphql' || path.extname(file) === '.gql') {
+      console.log(file)
+
       const query = fs.readFileSync(file)
       const tsDefinitions = fromQuery(Schema, query.toString(), {}, {})
       const allDefinitions = tsDefinitions
@@ -57,5 +59,6 @@ try {
   console.log('Successfully created gql.ts file')
 } catch (err) {
   console.log('Error creating gql.ts file')
+
   throw err
 }

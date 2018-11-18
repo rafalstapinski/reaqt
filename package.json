@@ -8,17 +8,20 @@
     "gql": " ts-node ./scripts/generate-gql.ts && tslint -p tslint.json --fix ./app/typings/gql.ts"
   },
   "dependencies": {
+    "@types/react-table": "^6.7.16",
     "apollo-cache-inmemory": "^1.2.9",
     "apollo-client": "^2.4.1",
     "apollo-link-http": "^1.5.4",
     "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "http-proxy-middleware": "^0.18.0",
     "react": "^16.4.1",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "react-table": "^6.8.6"
   },
   "devDependencies": {
     "@gql2ts/from-query": "^1.8.2",

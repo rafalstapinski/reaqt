@@ -1,0 +1,11 @@
+query getBar($id: Int!) {
+  getBar(id: $id) {
+    _id
+    name
+    address
+    city
+    state
+    opens
+    closes
+  }
+}

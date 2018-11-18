@@ -1,6 +1,0 @@
-query getStudentByName($name: String!) {
-  getStudentByName(name: $name) {
-    id
-    name
-  }
-}

@@ -1,0 +1,11 @@
+query getBars {
+  getBars {
+    _id
+    name
+    address
+    city
+    state
+    opens
+    closes
+  }
+}

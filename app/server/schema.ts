@@ -1,11 +1,21 @@
 import { GraphQLSchema } from 'graphql'
 import { mergeSchemas } from 'graphql-tools'
-import { StudentQueries } from './queries/student'
+import { DrinkerQueries } from './queries/drinker'
+import { ProductQueries } from './queries/product'
+import { BarQueries } from './queries/bar'
 
-const StudentSchema: GraphQLSchema = new GraphQLSchema({
-  query: StudentQueries
+const DrinkerSchema: GraphQLSchema = new GraphQLSchema({
+  query: DrinkerQueries
+})
+
+const BarSchema: GraphQLSchema = new GraphQLSchema({
+  query: BarQueries
+})
+
+const ProductSchema: GraphQLSchema = new GraphQLSchema({
+  query: ProductQueries
 })
 
 export const Schema: GraphQLSchema = mergeSchemas({
-  schemas: [StudentSchema]
+  schemas: [DrinkerSchema, BarSchema, ProductSchema]
 })

@@ -1,0 +1,6 @@
+query getDrinker($id: Int!) {
+  getDrinker(id: $id) {
+    _id
+    name
+  }
+}

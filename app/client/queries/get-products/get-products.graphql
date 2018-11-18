@@ -1,0 +1,8 @@
+query getProducts {
+  getProducts {
+    _id
+    name
+    price
+    isBeer
+  }
+}

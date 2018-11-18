@@ -1,6 +1,0 @@
-query getStudentById($id: ID!) {
-  getStudentById(id: $id) {
-    id
-    name
-  }
-}
