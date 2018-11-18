@@ -2,5 +2,8 @@ query getDrinkers {
   getDrinkers {
     _id
     name
+    address
+    city
+    state
   }
 }

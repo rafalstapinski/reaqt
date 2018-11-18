@@ -82,13 +82,13 @@ interface Bar {
 interface Product {
   __typename: 'Product'
   /** ID of the product */
-  _id: number | null
+  _id: number
   /** Name of the product */
-  name: string | null
+  name: string
   /** Price of the product */
-  price: number | null
+  price: number
   /** Boolean value is beer or not */
-  isBeer: boolean | null
+  isBeer: boolean
 }
 
 export interface GetBarInput {
@@ -130,6 +130,9 @@ export interface GetDrinkerInput {
 export interface SelectionOnGetDrinker {
   _id: number
   name: string
+  address: string
+  city: string
+  state: string
 }
 
 export interface GetDrinker {
@@ -139,6 +142,9 @@ export interface GetDrinker {
 export interface SelectionOnGetDrinkers {
   _id: number
   name: string
+  address: string
+  city: string
+  state: string
 }
 
 export interface GetDrinkers {
@@ -150,10 +156,10 @@ export interface GetProductInput {
 }
 
 export interface SelectionOnGetProduct {
-  _id: number | null
-  name: string | null
-  price: number | null
-  isBeer: boolean | null
+  _id: number
+  name: string
+  price: number
+  isBeer: boolean
 }
 
 export interface GetProduct {
@@ -161,10 +167,10 @@ export interface GetProduct {
 }
 
 export interface SelectionOnGetProducts {
-  _id: number | null
-  name: string | null
-  price: number | null
-  isBeer: boolean | null
+  _id: number
+  name: string
+  price: number
+  isBeer: boolean
 }
 
 export interface GetProducts {

@@ -11,10 +11,13 @@ export const Header: React.StatelessComponent<{}> = () => {
         >
           <ul className='nav navbar-nav'>
             <li>
-              <Link to='/about'>About</Link>
+              <Link to='/bars'>Bars</Link>
             </li>
             <li>
-              <Link to='/members'>Members</Link>
+              <Link to='/products'>Products</Link>
+            </li>
+            <li>
+              <Link to='/drinkers'>Drinkers</Link>
             </li>
           </ul>
         </div>

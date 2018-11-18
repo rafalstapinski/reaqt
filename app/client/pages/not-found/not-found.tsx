@@ -1,5 +1,11 @@
 import * as React from 'react'
+import { Header } from '../../components/header/header'
 
 export const NotFound: React.SFC = () => {
-  return <p>{'not found!!!!'}</p>
+  return (
+    <>
+      <Header />
+      <p>what you're looking for doesn't exist</p>
+    </>
+  )
 }
